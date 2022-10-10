@@ -1,0 +1,21 @@
+<fieldset>
+	{% if options.form_4 == true %}
+		<legend class="legend">Transferor/Seller's Name</legend>
+	{% endif %}
+	{% if options.form_5 == true %}
+		<legend class="legend">Transferor's Name</legend>
+	{% endif %}
+	{# {% dump(options) %} #}
+	{# {% dump(form.transferor) %} #}
+	<div class="form-group">
+		<div class="row">
+			<div class="col">{{ form_row(form.transferor.transferorRepresentative) }}</div>
+			<div class="col">{{ form_row(form.transferor.transferorTitle) }}</div>
+		</div>
+		{% if options.userRole == 'representative' %}
+			<div class="row">
+				<div class="col">{{ form_row(form.transferor.transferorName) }}</div>
+			</div>
+		{% endif %}
+	</div>
+</fieldset>

@@ -1,0 +1,18 @@
+<fieldset>
+	{% if options.form_1 == true %}
+		<legend class="legend">Applicant's/Maker's Necessity Statement</legend>
+	{% endif %}
+	{% if options.form_4 == true %}
+		<legend class="legend">Applicant's/Transferee's/Buyer's Necessity Statement</legend>
+	{% endif %}
+	{% if options.form_5 == true %}
+		<legend class="legend">Applicant's/Transferee's Necessity Statement</legend>
+	{% endif %}
+	<div class="form-group">
+		<div class="row">
+			<div class="col">
+				{{ form_row(form.necessity.statementPurpose) }}
+			</div>
+		</div>
+	</div>
+</fieldset>

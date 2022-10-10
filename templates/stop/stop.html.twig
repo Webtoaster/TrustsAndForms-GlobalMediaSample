@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% if title is not defined %}
+    {% set page_title = 'Stopped Page' %}
+{% else %}
+    {% set page_title = title %}
+{% endif %}
+
+{% block title %}{{ parent() }} - {{ page_title }}{% endblock %}
+
+{% block stylesheets %}
+    {{ parent() }}
+    {#    {{ encore_entry_link_tags('') }} #}
+{% endblock %}
+
+
+
+{% block body %}
+
+    {{ include('blocks/block_page_title.html.twig') }}
+
+    {#    {{ include('blocks/block_app_fllashes_verify_email_error.html.twig') }} #}
+
+Stop Sign.
+
+
+{% endblock %}

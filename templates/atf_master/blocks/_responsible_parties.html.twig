@@ -1,0 +1,39 @@
+<fieldset>
+	<legend class="legend">Responsible Parties</legend>
+	<div class="form-group">
+		<div class="row">
+			<div class="col-6">{{ form_row(form.responsibleParty.rpName1) }}</div>
+			<div class="col-6">{{ form_row(form.responsibleParty.rpEmail1) }}</div>
+		</div>
+		<div class="row">
+			<div class="col-6">{{ form_row(form.responsibleParty.rpName2) }}</div>
+			<div class="col-6">{{ form_row(form.responsibleParty.rpEmail2) }}</div>
+		</div>
+		<div class="row">
+			<div class="col-6">{{ form_row(form.responsibleParty.rpName3) }}</div>
+			<div class="col-6">{{ form_row(form.responsibleParty.rpEmail3) }}</div>
+		</div>
+		<div class="row">
+			<div class="col-6">{{ form_row(form.responsibleParty.rpName4) }}</div>
+			<div class="col-6">{{ form_row(form.responsibleParty.rpEmail4) }}</div>
+		</div>
+		<div class="row">
+			<div class="col-6">{{ form_row(form.responsibleParty.rpName5) }}</div>
+			<div class="col-6">{{ form_row(form.responsibleParty.rpEmail5) }}</div>
+		</div>
+		<div class="row">
+			<div class="col-6">{{ form_row(form.responsibleParty.rpName6) }}</div>
+			<div class="col-6">{{ form_row(form.responsibleParty.rpEmail6) }}</div>
+		</div>
+		{% if options.form_4 == true %}
+			<div class="row">
+				<div class="col-6">{{ form_row(form.responsibleParty.rpName7) }}</div>
+				<div class="col-6">{{ form_row(form.responsibleParty.rpEmail7) }}</div>
+			</div>
+			<div class="row">
+				<div class="col-6">{{ form_row(form.responsibleParty.rpName8) }}</div>
+				<div class="col-6">{{ form_row(form.responsibleParty.rpEmail8) }}</div>
+			</div>
+		{% endif %}
+	</div>
+</fieldset>

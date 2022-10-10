@@ -1,0 +1,9 @@
+<fieldset>
+	<legend class="legend">{{ Legend|default('Name') }}</legend>
+	<div class="row">
+		<div class="col-4">{{ form_row(name.first) }}</div>
+		<div class="col-3">{{ form_row(name.middle) }}</div>
+		<div class="col-4">{{ form_row(name.last) }}</div>
+		<div class="col-1">{{ form_row(name.suffix) }}</div>
+	</div>
+</fieldset>

@@ -1,0 +1,35 @@
+<fieldset>
+	{% if options.form_1 == true %}
+		<legend class="legend">Applicant's/Maker's Identity</legend>
+	{% endif %}
+	{% if options.form_4 == true %}
+		<legend class="legend">Applicant's/Transferee's/Buyer's Identity</legend>
+	{% endif %}
+	{% if options.form_5 == true %}
+		<legend class="legend">Applicant's/Transferee's Identity</legend>
+	{% endif %}
+
+	{# {% dump(options) %} #}
+	{# {% dump(form.transferee) %} #}
+
+	<div class="form-group">
+		<div class="row">
+			<div class="col">{{ form_row(form.transferee.applicantName) }}</div>
+			<div class="col">{{ form_row(form.transferee.applicantTitle) }}</div>
+		</div>
+
+		{% if options.userRole == 'representative' %}
+			<div class="row">
+				<div class="col">{{ form_row(form.transferee.transfereeName) }}</div>
+
+				<div class="col">{{ form_row(form.transferee.typeTransferee) }}</div>
+			</div>
+		{% endif %}
+
+		{% if options.userRole == 'representative' and options.form_1 == true %}
+			<div class="row">
+				<div class="col">{{ form_row(form.transferee.transfereeTradeName) }}</div>
+			</div>
+		{% endif %}
+	</div>
+</fieldset>

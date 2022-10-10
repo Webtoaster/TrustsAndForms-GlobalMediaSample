@@ -1,0 +1,19 @@
+<fieldset>
+	{% if options.form_1 == true %}
+		<legend class="legend">Applicant's/Maker's Federal Firearms License Number</legend>
+	{% else %}
+		<legend class="legend">Transferee's/Applicant's Federal Firearms License Number</legend>
+	{% endif %}
+	<div class="form-group">
+		<div class="row">
+			<div class="col-3">{{ form_row(form.transfereeFFL.transfereeFfl1) }}</div>
+			<div class="col-1">{{ form_row(form.transfereeFFL.transfereeFfl2) }}</div>
+			<div class="col-1">{{ form_row(form.transfereeFFL.transfereeFfl3) }}</div>
+			<div class="col-4">{{ form_row(form.transfereeFFL.transfereeFfl4) }}</div>
+		</div>
+		<div class="row">
+			<div class="col-5">{{ form_row(form.transfereeFFL.transfereeEin) }}</div>
+			<div class="col-4">{{ form_row(form.transfereeFFL.transfereeClass) }}</div>
+		</div>
+	</div>
+</fieldset>

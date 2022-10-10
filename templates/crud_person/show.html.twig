@@ -1,0 +1,118 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Person{% endblock %}
+
+{% block body %}
+    <h1>Person</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ person.id }}</td>
+            </tr>
+            <tr>
+                <th>NameFirst</th>
+                <td>{{ person.nameFirst }}</td>
+            </tr>
+            <tr>
+                <th>NameMiddle</th>
+                <td>{{ person.nameMiddle }}</td>
+            </tr>
+            <tr>
+                <th>NameLast</th>
+                <td>{{ person.nameLast }}</td>
+            </tr>
+            <tr>
+                <th>NameSuffix</th>
+                <td>{{ person.nameSuffix }}</td>
+            </tr>
+            <tr>
+                <th>AddressPhysicalLine1</th>
+                <td>{{ person.addressPhysicalLine1 }}</td>
+            </tr>
+            <tr>
+                <th>AddressPhysicalLine2</th>
+                <td>{{ person.addressPhysicalLine2 }}</td>
+            </tr>
+            <tr>
+                <th>AddressPhysicalCity</th>
+                <td>{{ person.addressPhysicalCity }}</td>
+            </tr>
+            <tr>
+                <th>AddressPhysicalState</th>
+                <td>{{ person.addressPhysicalState }}</td>
+            </tr>
+            <tr>
+                <th>AddressPhysicalZipCode</th>
+                <td>{{ person.addressPhysicalZipCode }}</td>
+            </tr>
+            <tr>
+                <th>AddressMailingLine1</th>
+                <td>{{ person.addressMailingLine1 }}</td>
+            </tr>
+            <tr>
+                <th>AddressMailingLine2</th>
+                <td>{{ person.addressMailingLine2 }}</td>
+            </tr>
+            <tr>
+                <th>AddressMailingCity</th>
+                <td>{{ person.addressMailingCity }}</td>
+            </tr>
+            <tr>
+                <th>AddressMailingState</th>
+                <td>{{ person.addressMailingState }}</td>
+            </tr>
+            <tr>
+                <th>AddressMailingZipCode</th>
+                <td>{{ person.addressMailingZipCode }}</td>
+            </tr>
+            <tr>
+                <th>PhoneHome</th>
+                <td>{{ person.phoneHome }}</td>
+            </tr>
+            <tr>
+                <th>PhoneMobile</th>
+                <td>{{ person.phoneMobile }}</td>
+            </tr>
+            <tr>
+                <th>PhoneWork</th>
+                <td>{{ person.phoneWork }}</td>
+            </tr>
+            <tr>
+                <th>Url</th>
+                <td>{{ person.url }}</td>
+            </tr>
+            <tr>
+                <th>Email</th>
+                <td>{{ person.email }}</td>
+            </tr>
+            <tr>
+                <th>DateOfBirth</th>
+                <td>{{ person.dateOfBirth ? person.dateOfBirth|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>DateOfDeath</th>
+                <td>{{ person.dateOfDeath ? person.dateOfDeath|date('Y-m-d') : '' }}</td>
+            </tr>
+            <tr>
+                <th>DeletedAt</th>
+                <td>{{ person.deletedAt ? person.deletedAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>CreatedAt</th>
+                <td>{{ person.createdAt ? person.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>UpdatedAt</th>
+                <td>{{ person.updatedAt ? person.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('crud_person_index') }}">back to list</a>
+
+    <a href="{{ path('crud_person_edit', {'id': person.id}) }}">edit</a>
+
+    {{ include('crud_person/_delete_form.html.twig') }}
+{% endblock %}

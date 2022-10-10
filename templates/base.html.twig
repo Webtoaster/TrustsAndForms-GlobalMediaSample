@@ -1,0 +1,50 @@
+<!doctype html>
+<html class="no-js" lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <title>{% block title %}{{ SITE_TITLE }}{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <meta property="og:title" content="">
+    <meta property="og:type" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="">
+
+
+{#    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Spartan&display=swap"> #}
+{#    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.12.1/css/all.min.css" #}
+{#          integrity="sha256-mmgLkCYLUQbXn0B1SRqzHar6dCnv9oZFPEC1g1cwlkk=" crossorigin="anonymous"/> #}
+
+    {% block stylesheets %}
+        {{ encore_entry_link_tags('app_style') }}
+    {% endblock %}
+    {% block javascripts %}
+        {{ encore_entry_script_tags('app') }}
+    {% endblock %}
+
+</head>
+<body>
+{{ include('blocks/block_nav_bar.html.twig') }}
+
+
+<div class="container-lg">
+	{{ include('blocks/block_flash_messages.html.twig') }}
+	{% block body %}{% endblock %}
+</div>
+
+
+<footer class="mt-5 p-3 text-center">
+    {{ SITE_TITLE }}
+    {#    Made with <i style="color: red;" class="fa fa-heart"></i> by the guys and gals at <a #}
+    {#            style="color: #444; text-decoration: underline;" href="https://symfonycasts.com">SymfonyCasts</a> #}
+</footer>
+
+
+
+
+{% block javascripts_footer %}
+    {{ encore_entry_script_tags('app_footer') }}
+{% endblock %}
+</body>
+</html>

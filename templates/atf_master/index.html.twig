@@ -1,0 +1,137 @@
+{% extends 'base.html.twig' %}
+
+{% if title is not defined %}
+	{% set page_title = 'ATF Master Form' %}
+{% else %}
+	{% set page_title = title %}
+{% endif %}
+
+{% block title %}{{ parent() }} - {{ page_title }}{% endblock %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	{#    {{ encore_entry_link_tags('') }} #}
+{% endblock %}
+
+{% block body %}
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-12">
+				<h2 class="h3 mb-3 font-weight-normal">{{ page_title }}</h2>
+			</div>
+		</div>
+	</div>
+	{{ dump(options) }}
+	{{ form_start(form) }}
+
+	{% for flashError in app.flashes('verify_email_error') %}
+		<div class="alert alert-danger" role="alert">{{ flashError }}</div>
+	{% endfor %}
+
+	<div class="row justify-content-md-center">
+		<div class="bg-light mt-4 p-4">
+			{% include 'atf_master/blocks/_transferee_name.html.twig' %}
+		</div>
+	</div>
+
+	<div class="row justify-content-md-center">
+		<div class="bg-light mt-4 p-4">
+			{% include 'atf_master/blocks/_transferee_address.html.twig' %}
+		</div>
+	</div>
+
+	{% if form.transferee.transfereeEmail is defined and form.transferee.transfereePhone is defined %}
+		<div class="row justify-content-md-center">
+			<div class="bg-light mt-4 p-4">
+				{% include 'atf_master/blocks/_transferee_contact.html.twig' %}
+			</div>
+		</div>
+	{% endif %}
+
+	{% if form.transfereeFFL is defined %}
+		<div class="row justify-content-md-center">
+			<div class="bg-light mt-4 p-4">
+				{% include 'atf_master/blocks/_transferee_ffl.html.twig' %}
+			</div>
+		</div>
+	{% endif %}
+
+
+
+
+	{% if options.form_4 == true or options.form_5 == true %}
+		<div class="row justify-content-md-center">
+			<div class="bg-light mt-4 p-4">
+				{% include 'atf_master/blocks/_transferor_name.html.twig' %}
+			</div>
+		</div>
+
+		<div class="row justify-content-md-center">
+			<div class="bg-light mt-4 p-4">
+				{% include 'atf_master/blocks/_transferor_address.html.twig' %}
+			</div>
+		</div>
+
+		<div class="row justify-content-md-center">
+			<div class="bg-light mt-4 p-4">
+				{% include 'atf_master/blocks/_transferor_contact.html.twig' %}
+			</div>
+		</div>
+
+
+		{% if form.transferorFFL is defined %}
+			<div class="row justify-content-md-center">
+				<div class="bg-light mt-4 p-4">
+					{% include 'atf_master/blocks/_transferor_ffl.html.twig' %}
+				</div>
+			</div>
+		{% endif %}
+
+	{% endif %}
+
+
+
+
+
+
+
+	{% if form.necessity is defined %}
+		<div class="row justify-content-md-center">
+			<div class="bg-light mt-4 p-4">
+				{% include 'atf_master/blocks/_necessity.html.twig' %}
+			</div>
+		</div>
+	{% endif %}
+
+
+	{% if form.responsibleParty is defined %}
+		<div class="row justify-content-md-center">
+			<div class="bg-light mt-4 p-4">
+				{% include 'atf_master/blocks/_responsible_parties.html.twig' %}
+			</div>
+		</div>
+	{% endif %}
+
+
+	{% if form.background is defined %}
+		<div class="row justify-content-md-center">
+			<div class="bg-light mt-4 p-4">
+				{% include 'atf_master/blocks/_background.html.twig' %}
+			</div>
+		</div>
+	{% endif %}
+
+
+
+	{% if options.userRole == 'individual' %}
+		{{ form_widget(form.transferee.typeTransferee) }}
+	{% endif %}
+
+
+	{{ form_rest(form) }}
+
+
+
+	{{ form_end(form) }}
+{% endblock %}

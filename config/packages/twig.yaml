@@ -1,0 +1,16 @@
+twig:
+    default_path: '%kernel.project_dir%/templates'
+#    form_themes: ['bootstrap_5_horizontal_layout.html.twig']
+    form_themes: ['form/igt_bootstrap_5_layout.html.twig']
+
+#    form_themes: ['bootstrap_5_layout.html.twig']
+
+    globals:
+        SITE_TITLE: '%env(SITE_TITLE)%'
+
+
+
+
+when@test:
+    twig:
+        strict_variables: true

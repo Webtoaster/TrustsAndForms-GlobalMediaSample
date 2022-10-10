@@ -1,0 +1,93 @@
+<fieldset>
+
+
+
+
+	{% if options.form_1 == true %}
+		<legend class="legend">Applicant's/Maker's Background Check Statement</legend>
+	{% endif %}
+	{% if options.form_4 == true %}
+		<legend class="legend">Applicant's/Transferee's/Buyer's Background Check Statement</legend>
+	{% endif %}
+	{% if options.form_5 == true %}
+		<legend class="legend">Applicant's/Transferee's Background Check Statement</legend>
+	{% endif %}
+
+
+
+	<div class="form-group">
+		<div class="row">
+			<div class="col">{{ form_row(form.background.a) }}</div>
+		</div>
+		<div class="row">
+			<div class="col">{{ form_row(form.background.b) }}</div>
+		</div>
+		<div class="row">
+			<div class="col">{{ form_row(form.background.c) }}</div>
+		</div>
+		<div class="row">
+			<div class="col">{{ form_row(form.background.d) }}</div>
+		</div>
+		<div class="row">
+			<div class="col">{{ form_row(form.background.e) }}</div>
+		</div>
+		<div class="row">
+			<div class="col">{{ form_row(form.background.f) }}</div>
+		</div>
+		<div class="row">
+			<div class="col">{{ form_row(form.background.g) }}</div>
+		</div>
+		<div class="row">
+			<div class="col">{{ form_row(form.background.h) }}</div>
+		</div>
+		<div class="row">
+			<div class="col-6">{{ form_row(form.background.dateOfBirth) }}</div>
+			<div class="col-6">{{ form_row(form.background.ssn) }}</div>
+		</div>
+		<div class="row">
+			<div class="col-6">{{ form_row(form.background.ethnicity) }}</div>
+			<div class="col-6">{{ form_row(form.background.race) }}</div>
+		</div>
+
+
+
+		<div class="row">
+			<div class="col">{{ form_row(form.background.citizenshipUs) }}</div>
+		</div>
+		<div class="row">
+			<div class="col">{{ form_row(form.background.citizenshipOther) }}</div>
+		</div>
+		<div class="row">
+			<div class="col">{{ form_row(form.background.citizenship) }}</div>
+		</div>
+		<div class="row">
+			<div class="col">{{ form_row(form.background.stateOfBirth) }}</div>
+		</div>
+		<div class="row">
+			<div class="col">{{ form_row(form.background.countryOfBirth) }}</div>
+		</div>
+		<div class="row">
+			<div class="col">{{ form_row(form.background.renounced) }}</div>
+		</div>
+		<div class="row">
+			<div class="col">{{ form_row(form.background.illegalAlien) }}</div>
+		</div>
+		<div class="row">
+			<div class="col">{{ form_row(form.background.residentAlien) }}</div>
+		</div>
+		<div class="row">
+			<div class="col">{{ form_row(form.background.residentAlienException) }}</div>
+		</div>
+		<div class="row">
+			<div class="col">{{ form_row(form.background.admissionNumber) }}</div>
+		</div>
+		<div class="row">
+			<div class="col">{{ form_row(form.background.hasUPIN) }}</div>
+		</div>
+		<div class="row">
+			<div class="col">{{ form_row(form.background.upin) }}</div>
+		</div>
+
+
+	</div>
+</fieldset>

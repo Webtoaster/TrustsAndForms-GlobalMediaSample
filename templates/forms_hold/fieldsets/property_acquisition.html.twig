@@ -1,0 +1,27 @@
+<fieldset>
+    <legend class="legend">{{ nameLegend|default('Property Acquisition') }}</legend>
+
+
+    {% if form.dateStamp %}
+        {{ form_row(form.dateStamp.dateStamp) }}
+    {% endif %}
+
+    {% if form.dateStamp %}
+        {{ form_row(form.dateStamp.dateStamp) }}
+    {% endif %}
+
+    {% if form.nameSeller %}
+        {{ form_row(form.nameSeller.nameSeller) }}
+    {% endif %}
+
+    {% if form.dateAcquired %}
+        {{ form_row(form.dateAcquired.dateAcquired) }}
+    {% endif %}
+    {% if form.nameContributor %}
+        {{ form_row(form.nameContributor.nameContributor) }}
+    {% endif %}
+
+
+
+</fieldset>
+

@@ -1,0 +1,55 @@
+<fieldset>
+	{% if options.form_1 == true %}
+		<legend class="legend">Applicant's/Maker's Address</legend>
+		<div class="row">
+			<div class="col">
+				This is the <u>Legal Address</u> where the Transferee is located.&nbsp; If you use a PO
+				Box, here, you must enter the <u>Physical Address</u> below.&nbsp; <i>Note: The ATF Form 1
+					is the only form with an Alternate Address.</i>
+			</div>
+		</div>
+	{% endif %}
+	{% if options.form_4 == true %}
+		<legend class="legend">Applicant's/Transferee's/Buyer's Address</legend>
+		<div class="row">
+			<div class="col">This is a <u>Physical Address</u> where you live, or where the organization is
+				legally registered.&nbsp; The ATF Form 4 does not have a space for an alternate address.
+				Use a PO Box in this field at your peril.
+			</div>
+		</div>
+	{% endif %}
+	{% if options.form_5 == true %}
+		<legend class="legend">Applicant's/Transferee's Address</legend>
+		<div class="row">
+			<div class="col">This is a <u>Physical Address</u> where you live, or where the organization is
+				legally registered.&nbsp; The ATF Form 4 does not have a space for an alternate address.
+				Use a PO Box in this field at your peril.
+			</div>
+		</div>
+	{% endif %}
+	{#        {% dump(options) %} #}
+	{#        {% dump(form.transferee) %} #}
+	<div class="form-group">
+		<div class="row">
+			<div class="col">{{ form_row(form.transferee.transfereeLine1) }}</div>
+		</div>
+		<div class="row">
+			<div class="col">{{ form_row(form.transferee.transfereeLine2) }}</div>
+		</div>
+		<div class="row">
+			<div class="col-6">{{ form_row(form.transferee.transfereeCity) }}</div>
+			{% if form.transferee.transfereeCounty is defined %}
+				<div class="col-6">{{ form_row(form.transferee.transfereeCounty) }}</div>
+			{% endif %}
+		</div>
+		<div class="row">
+			<div class="col-7">{{ form_row(form.transferee.transfereeState) }}</div>
+			<div class="col-5">{{ form_row(form.transferee.transfereeZipcode) }}</div>
+		</div>
+		{% if options.form_1 == true %}
+			<div class="row">
+				<div class="col">{{ form_row(form.transferee.transfereeAlternateAddress) }}</div>
+			</div>
+		{% endif %}
+	</div>
+</fieldset>

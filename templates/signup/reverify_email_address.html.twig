@@ -1,0 +1,33 @@
+{% extends 'base.html.twig' %}
+{% if title is not defined %}
+    {% set page_title = 'Re-Verify Email Address' %}
+{% else %}
+    {% set page_title = title %}
+{% endif %}
+{% block title %}{{ parent() }} - {{ page_title }}{% endblock %}
+{% block stylesheets %}
+    {{ parent() }}
+{% endblock %}
+
+
+
+{% block body %}
+    {{ include('blocks/block_page_title.html.twig') }}
+
+    {{ form_start(form) }}
+    <fieldset>
+        <legend class="legend">{{ Legend|default('Email Address') }}</legend>
+        {{ form_row(form.email_address) }}
+    </fieldset>
+{# TODO Put the Captcha back into effect.  #}
+{#    {% block captcha_widget %}#}
+{#        {% apply spaceless %}#}
+{#            <fieldset>#}
+{#                <legend class="legend">{{ Legend|default('Captcha') }}</legend>#}
+{#                {{ form_row(form.captcha) }}#}
+{#            </fieldset>#}
+{#        {% endapply %}#}
+{#    {% endblock %}#}
+    {{ form_rest(form) }}
+    {{ form_end(form) }}
+{% endblock %}

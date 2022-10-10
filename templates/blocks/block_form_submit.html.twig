@@ -1,0 +1,5 @@
+
+{% if submit_label is not defined %}
+    {% set submit_label = 'Save' %}
+{% endif %}
+<input type="submit" value="{{ submit_label }}" class="btn btn-primary" name=submit" />

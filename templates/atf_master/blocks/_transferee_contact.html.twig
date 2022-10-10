@@ -1,0 +1,19 @@
+<fieldset>
+	{% if options.form_1 == true %}
+		<legend class="legend">Applicant's/Maker's Contact Information</legend>
+	{% endif %}
+	{% if options.form_4 == true %}
+		<legend class="legend">Applicant's/Transferee's/Buyer's Contact Information</legend>
+	{% endif %}
+	{% if options.form_5 == true %}
+		<legend class="legend">Applicant's/Transferee's Contact Information</legend>
+	{% endif %}
+	{#        {% dump(options) %} #}
+	{#        {% dump(form.transferee) %} #}
+	<div class="form-group">
+		<div class="row">
+			<div class="col">{{ form_row(form.transferee.transfereeEmail) }}</div>
+			<div class="col">{{ form_row(form.transferee.transfereePhone) }}</div>
+		</div>
+	</div>
+</fieldset>

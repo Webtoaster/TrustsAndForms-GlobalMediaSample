@@ -1,0 +1,20 @@
+<fieldset>
+	<legend class="legend">{{ Legend|default('Staff Roles') }}</legend>
+	<div class="row">
+		
+		<div class="col mb-3 bold">
+			Check each that applies to this user.
+		</div>
+	</div>
+	
+	<div class="row">
+		
+		<div class="col">
+			{{ form_row(form.isAttorney) }}
+			{{ form_row(form.isParalegal) }}
+			{{ form_row(form.isLegalSecretary) }}
+			{{ form_row(form.isManager) }}
+		</div>
+	</div>
+
+</fieldset>

@@ -1,0 +1,378 @@
+{% extends 'base.html.twig' %}
+
+{% if title is not defined %}
+	{% set page_title = 'DEFINE PAGE TITLE' %}
+{% else %}
+	{% set page_title = title %}
+{% endif %}
+
+{% block title %}{{ parent() }} - {{ page_title }}{% endblock %}
+
+{% block stylesheets %}
+	{{ parent() }}
+	{#    {{ encore_entry_link_tags('') }} #}
+{% endblock %}
+
+
+
+{% block body %}
+
+	<div class="container-fluid">
+		<div class="row">
+			<div class="col-12">
+				<h2 class="h3 mb-3 font-weight-normal">{{ page_title }}</h2>
+			</div>
+		</div>
+	</div>
+
+	{% for flashError in app.flashes('verify_email_error') %}
+		<div class="alert alert-danger" role="alert">{{ flashError }}</div>
+		{#        {% dump(form) %} #}
+	{% endfor %}
+
+
+
+
+	<h2>Privacy Policy</h2>
+	<p>Your privacy is important to us. It is Trusts &amp; Forms.com&#39;s policy to respect your privacy and comply
+		with any applicable law and regulation regarding any personal information we may collect about you, including
+		across our website, <a href="https://www.trustsandforms.com">https://www.trustsandforms.com</a>, and other sites
+		we own and operate. </p>
+	<p>This policy is effective as of 10 April 2022 and was last updated on 10 April 2022. </p>
+	<h3>Information We Collect</h3>
+	<p>Information we collect includes both information you knowingly and actively provide us when using or
+		participating in any of our services and promotions, and any information automatically sent by your devices in
+		the course of accessing our products and services. </p>
+	<h4>Log Data</h4>
+	<p>When you visit our website, our servers may automatically log the standard data provided by your web browser. It
+		may include your device’s Internet Protocol (IP) address, your browser type and version, the pages you visit,
+		the time and date of your visit, the time spent on each page, other details about your visit, and technical
+		details that occur in conjunction with any errors you may encounter. </p>
+	<p>Please be aware that while this information may not be personally identifying by itself, it may be possible to
+		combine it with other data to personally identify individual persons. </p>
+	<h4>Personal Information</h4>
+	<p>We may ask for personal information which may include one or more of the following: </p>
+	<ul>
+		<li>Name</li>
+		<li>Email</li>
+		<li>Date of birth</li>
+		<li>Phone/mobile number</li>
+		<li>Home/mailing address</li>
+	</ul>
+	<h4>Legitimate Reasons for Processing Your Personal Information</h4>
+	<p>We only collect and use your personal information when we have a legitimate reason for doing so. In which
+		instance, we only collect personal information that is reasonably necessary to provide our services to you. </p>
+	<h4>Collection and Use of Information</h4>
+	<p>We may collect personal information from you when you do any of the following on our website: </p>
+	<ul>
+		<li>Sign up to receive updates from us via email or social media channels</li>
+		<li>Use a mobile device or web browser to access our content</li>
+		<li>Contact us via email, social media, or on any similar technologies</li>
+		<li>When you mention us on social media</li>
+	</ul>
+	<p>We may collect, hold, use, and disclose information for the following purposes, and personal information will not
+		be further processed in a manner that is incompatible with these purposes: </p>
+	<p>We may collect, hold, use, and disclose information for the following purposes, and personal information will not
+		be further processed in a manner that is incompatible with these purposes: </p>
+	<ul>
+		<li>to enable you to customise or personalise your experience of our website</li>
+		<li>to contact and communicate with you</li>
+		<li>for analytics, market research, and business development, including to operate and improve our website,
+			associated applications, and associated social media platforms
+		</li>
+		<li>for advertising and marketing, including to send you promotional information about our products and services
+			and information about third parties that we consider may be of interest to you
+		</li>
+		<li>to enable you to access and use our website, associated applications, and associated social media
+			platforms
+		</li>
+		<li>for internal record keeping and administrative purposes</li>
+		<li>to comply with our legal obligations and resolve any disputes that we may have</li>
+		<li>for security and fraud prevention, and to ensure that our sites and apps are safe, secure, and used in line
+			with our terms of use
+		</li>
+	</ul>
+	<p>Please be aware that we may combine information we collect about you with general information or research data we
+		receive from other trusted sources. </p>
+	<h4>Security of Your Personal Information</h4>
+	<p>When we collect and process personal information, and while we retain this information, we will protect it within
+		commercially acceptable means to prevent loss and theft, as well as unauthorized access, disclosure, copying,
+		use, or modification. </p>
+	<p>Although we will do our best to protect the personal information you provide to us, we advise that no method of
+		electronic transmission or storage is 100% secure, and no one can guarantee absolute data security. We will
+		comply with laws applicable to us in respect of any data breach. </p>
+	<p>You are responsible for selecting any password and its overall security strength, ensuring the security of your
+		own information within the bounds of our services. </p>
+	<h4>How Long We Keep Your Personal Information</h4>
+	<p>We keep your personal information only for as long as we need to. This time period may depend on what we are
+		using your information for, in accordance with this privacy policy. If your personal information is no longer
+		required, we will delete it or make it anonymous by removing all details that identify you. </p>
+	<p>However, if necessary, we may retain your personal information for our compliance with a legal, accounting, or
+		reporting obligation or for archiving purposes in the public interest, scientific, or historical research
+		purposes or statistical purposes. </p>
+	<h3>Children’s Privacy</h3>
+	<p>We do not aim any of our products or services directly at children under the age of 13, and we do not knowingly
+		collect personal information about children under 13. </p>
+	<h3>Disclosure of Personal Information to Third Parties</h3>
+	<p>We may disclose personal information to: </p>
+	<ul>
+		<li>a parent, subsidiary, or affiliate of our company</li>
+		<li>third party service providers for the purpose of enabling them to provide their services, for example, IT
+			service providers, data storage, hosting and server providers, advertisers, or analytics platforms
+		</li>
+		<li>our employees, contractors, and/or related entities</li>
+		<li>our existing or potential agents or business partners</li>
+		<li>sponsors or promoters of any competition, sweepstakes, or promotion we run</li>
+		<li>courts, tribunals, regulatory authorities, and law enforcement officers, as required by law, in connection
+			with any actual or prospective legal proceedings, or in order to establish, exercise, or defend our legal
+			rights
+		</li>
+		<li>third parties, including agents or sub-contractors, who assist us in providing information, products,
+			services, or direct marketing to you third parties to collect and process data
+		</li>
+	</ul>
+	<h3>International Transfers of Personal Information</h3>
+	<p>The personal information we collect is stored and/or processed where we or our partners, affiliates, and
+		third-party providers maintain facilities. Please be aware that the locations to which we store, process, or
+		transfer your personal information may not have the same data protection laws as the country in which you
+		initially provided the information. If we transfer your personal information to third parties in other
+		countries: (i) we will perform those transfers in accordance with the requirements of applicable law; and (ii)
+		we will protect the transferred personal information in accordance with this privacy policy. </p>
+	<h3>Your Rights and Controlling Your Personal Information</h3>
+	<p>You always retain the right to withhold personal information from us, with the understanding that your experience
+		of our website may be affected. We will not discriminate against you for exercising any of your rights over your
+		personal information. If you do provide us with personal information you understand that we will collect, hold,
+		use and disclose it in accordance with this privacy policy. You retain the right to request details of any
+		personal information we hold about you. </p>
+	<p>If we receive personal information about you from a third party, we will protect it as set out in this privacy
+		policy. If you are a third party providing personal information about somebody else, you represent and warrant
+		that you have such person’s consent to provide the personal information to us. </p>
+	<p>If you have previously agreed to us using your personal information for direct marketing purposes, you may change
+		your mind at any time. We will provide you with the ability to unsubscribe from our email-database or opt out of
+		communications. Please be aware we may need to request specific information from you to help us confirm your
+		identity. </p>
+	<p>If you believe that any information we hold about you is inaccurate, out of date, incomplete, irrelevant, or
+		misleading, please contact us using the details provided in this privacy policy. We will take reasonable steps
+		to correct any information found to be inaccurate, incomplete, misleading, or out of date. </p>
+	<p>If you believe that we have breached a relevant data protection law and wish to make a complaint, please contact
+		us using the details below and provide us with full details of the alleged breach. We will promptly investigate
+		your complaint and respond to you, in writing, setting out the outcome of our investigation and the steps we
+		will take to deal with your complaint. You also have the right to contact a regulatory body or data protection
+		authority in relation to your complaint. </p>
+	<h3>Use of Cookies</h3>
+	<p>We use &ldquo;cookies&rdquo; to collect information about you and your activity across our site. A cookie is a
+		small piece of data that our website stores on your computer, and accesses each time you visit, so we can
+		understand how you use our site. This helps us serve you content based on preferences you have specified. </p>
+	<h3>Limits of Our Policy</h3>
+	<p>Our website may link to external sites that are not operated by us. Please be aware that we have no control over
+		the content and policies of those sites, and cannot accept responsibility or liability for their respective
+		privacy practices. </p>
+	<h3>Changes to This Policy</h3>
+	<p>At our discretion, we may change our privacy policy to reflect updates to our business processes, current
+		acceptable practices, or legislative or regulatory changes. If we decide to change this privacy policy, we will
+		post the changes here at the same link by which you are accessing this privacy policy. </p>
+	<p>If required by law, we will get your permission or give you the opportunity to opt in to or opt out of, as
+		applicable, any new uses of your personal information. </p>
+	<h3>Contact Us</h3>
+	<p>For any questions or concerns regarding your privacy, you may contact us using the following details: </p>
+	<p>Tom Olson<br/>
+		tos@trustsandforms.com </p>
+
+
+
+
+	<hr size="10px" color="black" align="center" width="100%" />
+
+	<h2><strong>Terms and Conditions</strong></h2>
+
+	<p>Welcome to Trusts &amp; Forms.com!</p>
+
+	<p>These terms and conditions outline the rules and regulations for the use of Trusts &amp; Forms.com's Website,
+		located at http://www.trustsandforms.com.</p>
+
+	<p>By accessing this website we assume you accept these terms and conditions. Do not continue to use Trusts &amp;
+		Forms.com if you do not agree to take all of the terms and conditions stated on this page.</p>
+
+	<p>The following terminology applies to these Terms and Conditions, Privacy Statement and Disclaimer Notice and all
+		Agreements: "Client", "You" and "Your" refers to you, the person log on this website and compliant to the
+		Company’s terms and conditions. "The Company", "Ourselves", "We", "Our" and "Us", refers to our Company.
+		"Party", "Parties", or "Us", refers to both the Client and ourselves. All terms refer to the offer, acceptance
+		and consideration of payment necessary to undertake the process of our assistance to the Client in the most
+		appropriate manner for the express purpose of meeting the Client’s needs in respect of provision of the
+		Company’s stated services, in accordance with and subject to, prevailing law of Netherlands. Any use of the
+		above terminology or other words in the singular, plural, capitalization and/or he/she or they, are taken as
+		interchangeable and therefore as referring to same.</p>
+
+	<h3><strong>Cookies</strong></h3>
+
+	<p>We employ the use of cookies. By accessing Trusts &amp; Forms.com, you agreed to use cookies in agreement with
+		the Trusts &amp; Forms.com's Privacy Policy. </p>
+
+	<p>Most interactive websites use cookies to let us retrieve the user’s details for each visit. Cookies are used by
+		our website to enable the functionality of certain areas to make it easier for people visiting our website. Some
+		of our affiliate/advertising partners may also use cookies.</p>
+
+	<h3><strong>License</strong></h3>
+
+	<p>Unless otherwise stated, Trusts &amp; Forms.com and/or its licensors own the intellectual property rights for all
+		material on Trusts &amp; Forms.com. All intellectual property rights are reserved. You may access this from
+		Trusts &amp; Forms.com for your own personal use subjected to restrictions set in these terms and
+		conditions.</p>
+
+	<p>You must not:</p>
+	<ul>
+		<li>Republish material from Trusts &amp; Forms.com</li>
+		<li>Sell, rent or sub-license material from Trusts &amp; Forms.com</li>
+		<li>Reproduce, duplicate or copy material from Trusts &amp; Forms.com</li>
+		<li>Redistribute content from Trusts &amp; Forms.com</li>
+	</ul>
+
+	<p>This Agreement shall begin on the date hereof. Our Terms and Conditions were created with the help of the <a
+				href="https://www.privacypolicies.com/blog/sample-terms-conditions-template/">Terms And Conditions
+			Template</a>.</p>
+
+	<p>Parts of this website offer an opportunity for users to post and exchange opinions and information in certain
+		areas of the website. Trusts &amp; Forms.com does not filter, edit, publish or review Comments prior to their
+		presence on the website. Comments do not reflect the views and opinions of Trusts &amp; Forms.com,its agents
+		and/or affiliates. Comments reflect the views and opinions of the person who post their views and opinions. To
+		the extent permitted by applicable laws, Trusts &amp; Forms.com shall not be liable for the Comments or for any
+		liability, damages or expenses caused and/or suffered as a result of any use of and/or posting of and/or
+		appearance of the Comments on this website.</p>
+
+	<p>Trusts &amp; Forms.com reserves the right to monitor all Comments and to remove any Comments which can be
+		considered inappropriate, offensive or causes breach of these Terms and Conditions.</p>
+
+	<p>You warrant and represent that:</p>
+
+	<ul>
+		<li>You are entitled to post the Comments on our website and have all necessary licenses and consents to do
+			so;
+		</li>
+		<li>The Comments do not invade any intellectual property right, including without limitation copyright, patent
+			or trademark of any third party;
+		</li>
+		<li>The Comments do not contain any defamatory, libelous, offensive, indecent or otherwise unlawful material
+			which is an invasion of privacy
+		</li>
+		<li>The Comments will not be used to solicit or promote business or custom or present commercial activities or
+			unlawful activity.
+		</li>
+	</ul>
+
+	<p>You hereby grant Trusts &amp; Forms.com a non-exclusive license to use, reproduce, edit and authorize others to
+		use, reproduce and edit any of your Comments in any and all forms, formats or media.</p>
+
+	<h3><strong>Hyperlinking to our Content</strong></h3>
+
+	<p>The following organizations may link to our Website without prior written approval:</p>
+
+	<ul>
+		<li>Government agencies;</li>
+		<li>Search engines;</li>
+		<li>News organizations;</li>
+		<li>Online directory distributors may link to our Website in the same manner as they hyperlink to the Websites
+			of other listed businesses; and
+		</li>
+		<li>System wide Accredited Businesses except soliciting non-profit organizations, charity shopping malls, and
+			charity fundraising groups which may not hyperlink to our Web site.
+		</li>
+	</ul>
+
+	<p>These organizations may link to our home page, to publications or to other Website information so long as the
+		link: (a) is not in any way deceptive; (b) does not falsely imply sponsorship, endorsement or approval of the
+		linking party and its products and/or services; and (c) fits within the context of the linking party’s site.</p>
+
+	<p>We may consider and approve other link requests from the following types of organizations:</p>
+
+	<ul>
+		<li>commonly-known consumer and/or business information sources;</li>
+		<li>dot.com community sites;</li>
+		<li>associations or other groups representing charities;</li>
+		<li>online directory distributors;</li>
+		<li>internet portals;</li>
+		<li>accounting, law and consulting firms; and</li>
+		<li>educational institutions and trade associations.</li>
+	</ul>
+
+	<p>We will approve link requests from these organizations if we decide that: (a) the link would not make us look
+		unfavorably to ourselves or to our accredited businesses; (b) the organization does not have any negative
+		records with us; (c) the benefit to us from the visibility of the hyperlink compensates the absence of Trusts
+		&amp; Forms.com; and (d) the link is in the context of general resource information.</p>
+
+	<p>These organizations may link to our home page so long as the link: (a) is not in any way deceptive; (b) does not
+		falsely imply sponsorship, endorsement or approval of the linking party and its products or services; and (c)
+		fits within the context of the linking party’s site.</p>
+
+	<p>If you are one of the organizations listed in paragraph 2 above and are interested in linking to our website, you
+		must inform us by sending an e-mail to Trusts &amp; Forms.com. Please include your name, your organization name,
+		contact information as well as the URL of your site, a list of any URLs from which you intend to link to our
+		Website, and a list of the URLs on our site to which you would like to link. Wait 2-3 weeks for a response.</p>
+
+	<p>Approved organizations may hyperlink to our Website as follows:</p>
+
+	<ul>
+		<li>By use of our corporate name; or</li>
+		<li>By use of the uniform resource locator being linked to; or</li>
+		<li>By use of any other description of our Website being linked to that makes sense within the context and
+			format of content on the linking party’s site.
+		</li>
+	</ul>
+
+	<p>No use of Trusts &amp; Forms.com's logo or other artwork will be allowed for linking absent a trademark license
+		agreement.</p>
+
+	<h3><strong>iFrames</strong></h3>
+
+	<p>Without prior approval and written permission, you may not create frames around our Webpages that alter in any
+		way the visual presentation or appearance of our Website.</p>
+
+	<h3><strong>Content Liability</strong></h3>
+
+	<p>We shall not be hold responsible for any content that appears on your Website. You agree to protect and defend us
+		against all claims that is rising on your Website. No link(s) should appear on any Website that may be
+		interpreted as libelous, obscene or criminal, or which infringes, otherwise violates, or advocates the
+		infringement or other violation of, any third party rights.</p>
+
+	<h3><strong>Your Privacy</strong></h3>
+
+	<p>Please read Privacy Policy</p>
+
+	<h3><strong>Reservation of Rights</strong></h3>
+
+	<p>We reserve the right to request that you remove all links or any particular link to our Website. You approve to
+		immediately remove all links to our Website upon request. We also reserve the right to amen these terms and
+		conditions and it’s linking policy at any time. By continuously linking to our Website, you agree to be bound to
+		and follow these linking terms and conditions.</p>
+
+	<h3><strong>Removal of links from our website</strong></h3>
+
+	<p>If you find any link on our Website that is offensive for any reason, you are free to contact and inform us any
+		moment. We will consider requests to remove links but we are not obligated to or so or to respond to you
+		directly.</p>
+
+	<p>We do not ensure that the information on this website is correct, we do not warrant its completeness or accuracy;
+		nor do we promise to ensure that the website remains available or that the material on the website is kept up to
+		date.</p>
+
+	<h3><strong>Disclaimer</strong></h3>
+
+	<p>To the maximum extent permitted by applicable law, we exclude all representations, warranties and conditions
+		relating to our website and the use of this website. Nothing in this disclaimer will:</p>
+
+	<ul>
+		<li>limit or exclude our or your liability for death or personal injury;</li>
+		<li>limit or exclude our or your liability for fraud or fraudulent misrepresentation;</li>
+		<li>limit any of our or your liabilities in any way that is not permitted under applicable law; or</li>
+		<li>exclude any of our or your liabilities that may not be excluded under applicable law.</li>
+	</ul>
+
+	<p>The limitations and prohibitions of liability set in this Section and elsewhere in this disclaimer: (a) are
+		subject to the preceding paragraph; and (b) govern all liabilities arising under the disclaimer, including
+		liabilities arising in contract, in tort and for breach of statutory duty.</p>
+
+	<p>As long as the website and the information and services on the website are provided free of charge, we will not
+		be liable for any loss or damage of any nature.</p>
+
+
+
+{% endblock %}

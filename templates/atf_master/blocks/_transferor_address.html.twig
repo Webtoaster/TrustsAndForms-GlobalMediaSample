@@ -1,0 +1,45 @@
+<fieldset>
+	{% if options.form_4 == true %}
+		<legend class="legend">Transferor/Seller's Legal Address</legend>
+		<div class="row">
+			<div class="col">This is a <u>Physical Address</u> where you live, or where the organization is
+				legally registered.&nbsp; The ATF Form 4 does not have a space for an alternate address.
+				Use a PO Box in this field at your peril.
+			</div>
+		</div>
+	{% endif %}
+	{% if options.form_5 == true %}
+		<legend class="legend">Transferor's Legal Address</legend>
+		<div class="row">
+			<div class="col">This is a <u>Physical Address</u> where you live, or where the organization is
+				legally registered.&nbsp; The ATF Form 4 does not have a space for an alternate address.
+				Use a PO Box in this field at your peril.
+			</div>
+		</div>
+	{% endif %}
+	{#        {% dump(options) %} #}
+	{#        {% dump(form.transferor) %} #}
+	<div class="form-group">
+		<div class="row">
+			<div class="col">{{ form_row(form.transferor.transfereeLine1) }}</div>
+		</div>
+		<div class="row">
+			<div class="col">{{ form_row(form.transferor.transfereeLine2) }}</div>
+		</div>
+		<div class="row">
+			<div class="col-6">{{ form_row(form.transferor.transfereeCity) }}</div>
+			{% if form.transferor.transfereeCounty is defined %}
+				<div class="col-6">{{ form_row(form.transferor.transfereeCounty) }}</div>
+			{% endif %}
+		</div>
+		<div class="row">
+			<div class="col-7">{{ form_row(form.transferor.transfereeState) }}</div>
+			<div class="col-5">{{ form_row(form.transferor.transfereeZipcode) }}</div>
+		</div>
+		{% if options.form_1 == true %}
+			<div class="row">
+				<div class="col">{{ form_row(form.transferor.transfereeAlternateAddress) }}</div>
+			</div>
+		{% endif %}
+	</div>
+</fieldset>

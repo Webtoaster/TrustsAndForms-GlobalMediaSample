@@ -1,0 +1,8 @@
+<div class="row">
+	{% if date.birth is defined %}
+		<div class="col">{{ form_row(date.birth) }}</div>
+	{% endif %}
+	{% if date.death is defined %}
+		<div class="col">{{ form_row(date.death) }}</div>
+	{% endif %}
+</div>

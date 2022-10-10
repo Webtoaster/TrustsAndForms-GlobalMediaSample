@@ -1,0 +1,55 @@
+{% extends 'base.html.twig' %}
+
+{% if title is not defined %}
+	{% set page_title = 'Register New User' %}
+{% else %}
+	{% set page_title = title %}
+{% endif %}
+
+{% block title %}{{ parent() }} - {{ page_title }}{% endblock %}
+
+{% block stylesheets %}
+	{{ parent() }}
+{% endblock %}
+
+{% block body %}
+	{#    {{ include('blocks/block_page_title.html.twig') }} #}
+
+
+	{% dump(form) %}
+
+	<div class="row justify-content-md-center">
+		<div class="login-form bg-light mt-4 p-4">
+
+
+			{{ form_start(form) }}
+			<h1 class="mb-10">Registration</h1>
+
+			{{ form_errors(form) }}
+			{{ include('forms/fieldsets/name_person.html.twig',  {name: form.name}, with_context = false) }}
+			{{ include('forms/fieldsets/address_physical.html.twig',  {address: form.physical}, with_context = false) }}
+			{{ include('forms/fieldsets/address_email.html.twig',   {email: form.email}, with_context = false) }}
+			{{ include('forms/fieldsets/registration_password.html.twig') }}
+			{{ form_rest(form) }}
+
+
+			{#            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}"/> #}
+
+
+			<div class="col-12 mt-2">
+				<button class="btn btn-lg btn-primary float-start" type="submit" tabindex="4">
+					Sign Me Up!
+				</button>
+				<a class="btn btn-lg btn-primary float-end" href="{{ path('app_login') }}"
+				   role="button" tabindex="5">Wait! I can Sign In.</a>
+			</div>
+
+			{#            <input type="hidden" name="_csrf_token" value="{{ csrf_token('authenticate') }}"/> #}
+
+			{{ form_end(form) }}
+
+		</div>
+	</div>
+
+
+{% endblock %}

@@ -1,0 +1,9 @@
+#annot:
+#  resource: "@AnnotRoutingBundle/Controller"
+#  type:     annotation
+
+
+
+controllers:
+    resource: '../../src/Controller/'
+    type:     annotation

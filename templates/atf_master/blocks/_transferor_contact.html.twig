@@ -1,0 +1,18 @@
+<fieldset>
+	{% if options.form_4 == true %}
+		<legend class="legend">Transferor's/Seller's Contact</legend>
+	{% endif %}
+	{% if options.form_5 == true %}
+		<legend class="legend">Transferor's Contact</legend>
+	{% endif %}
+	{#        {% dump(options) %} #}
+	{#        {% dump(form.transferor) %} #}
+	<div class="form-group">
+		{% if form.transferor.transferorEmail is defined and form.transferor.transferorPhone is defined %}
+			<div class="row">
+				<div class="col">{{ form_row(form.transferor.transferorEmail) }}</div>
+				<div class="col">{{ form_row(form.transferor.transferorPhone) }}</div>
+			</div>
+		{% endif %}
+	</div>
+</fieldset>

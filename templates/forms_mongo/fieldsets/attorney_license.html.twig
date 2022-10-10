@@ -1,0 +1,11 @@
+<fieldset>
+	<legend class="legend">{{ Legend|default('Attorney Licensure') }}</legend>
+	<div class="row">
+		<div class="col">
+			{{ form_row(attorney.licenseNo) }}
+			{{ form_row(attorney.licenseState) }}
+			{{ form_row(attorney.dateLawLicenseEffective) }}
+			{{ form_row(attorney.dateLawLicenseExpires) }}
+		</div>
+	</div>
+</fieldset>
